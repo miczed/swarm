@@ -31,3 +31,9 @@
 
 en:
   hello: "Hello world"
+  custom:
+    email_format_error: hat kein gültiges Format
+    login_failed: E-Mail Adresse und / oder Passwort falsch
+    sign_up_success: Willkommen bei swarm!
+    form_has_error: Das Formular enthält Fehler
+    comment_alert_default: Ein Kommentar darf nicht kürzer als 15 Zeichen sein
