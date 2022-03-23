@@ -6,7 +6,7 @@
               .html_safe,
               question_comment_path(comment.commentable, comment),
               method: :delete,
-              data: { confirm: "¿Estás seguro de eliminar este comentario?" } %>
+              data: { confirm: "Möchtest du diesen Kommentar wirklich löschen?" } %>
       <% elsif comment.commentable.is_a? Answer %>
         <%= link_to "<span class='glyphicon glyphicon-trash'></span>"
             .html_safe,
@@ -14,7 +14,7 @@
                                          comment.commentable,
                                          comment),
             method: :delete,
-            data: { confirm: "¿Estás seguro de eliminar este comentario?" } %>
+            data: { confirm: "Möchtest du diesen Kommentar wirklich löschen?" } %>
       <% end %>
     <% end %>
   </td>

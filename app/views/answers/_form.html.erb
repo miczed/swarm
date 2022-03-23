@@ -1,5 +1,5 @@
 <% if logged_in? %>
-  <h2 class="space">Tu respuesta:</h2>
+  <h2 class="space">Deine Antwort:</h2>
 
   <%= form_with model: answer, url: question_answers_path(question), local: true do |f| %>
     <%= render 'shared/error_messages', model: answer %>

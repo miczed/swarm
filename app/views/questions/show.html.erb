@@ -31,15 +31,15 @@
                           <div class="question__actions">
                             <ul>
                               <li>
-                                <%= link_to " <span class='glyphicon glyphicon-pencil'></span> Editar"
+                                <%= link_to " <span class='glyphicon glyphicon-pencil'></span> Bearbeiten"
                                       .html_safe,
                                       edit_question_path(@question) %>
                               </li>
                               <li>
-                                <%= link_to " <span class='glyphicon glyphicon-trash'></span> Eliminar"
+                                <%= link_to " <span class='glyphicon glyphicon-trash'></span> Löschen"
                                       .html_safe, @question,
                                       method: :delete,
-                                      data: { confirm: "¿Estás seguro de eliminar esta pregunta?" } %>
+                                      data: { confirm: "Möchtest du diese Frage wirklich löschen?" } %>
                               </li>
                             </ul>
                           </div>
@@ -47,7 +47,7 @@
                       </td>
                       <td class="user-signature">
                         <div class="user-action-time">
-                          formulada hace <%= time_ago_in_words @question.created_at %>
+                          gestellt von <%= time_ago_in_words @question.created_at %>
                         </div>
                         <div class= "user-details">
                           <%= mail_to @question.user.email %>
@@ -73,7 +73,7 @@
                       <td>
                         <% if logged_in? %>
                           <div class="comment-link-form">
-                            <a id="comments-link" href="#">añade un comentario</a>
+                            <a id="comments-link" href="#">Kommentieren</a>
                           </div>
                           <div class="comment-form">
                             <%= render 'comments/form', commentable: @question, url_path: question_comments_path(@question) %>
@@ -91,7 +91,7 @@
     </div>
     <div class="answers">
       <div class="answers__header">
-        <h2><%= pluralize(@question.answers.count, 'Respuesta', 'Respuestas') %>:</h2>
+        <h2><%= pluralize(@question.answers.count, 'Antwort', 'Antworten') %>:</h2>
       </div>
 
       <% if @question.answers.count > 0 %>
@@ -100,7 +100,7 @@
         <%= render 'answers/no_answers' %>
       <% end %>
 
-      <%= render 'answers/form', question: @question, answer: @answer, action: "Publica tu respuesta" %>
+      <%= render 'answers/form', question: @question, answer: @answer, action: "Antwort veröffentlichen" %>
 
     </div>
   </div>

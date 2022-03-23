@@ -7,13 +7,13 @@
             <div class="questions__mini_counts">
               <span><%= question.votes.size %></span>
             </div>
-            <div>Votos</div>
+            <div>Votes</div>
           </div>
           <div class="questions__answers">
             <div class="questions__mini_counts">
               <span><%= question.answers.size %></span>
             </div>
-            <div>Respuestas</div>
+            <div>Antworten</div>
           </div>
         </div>
         <div class="questions__summary">
@@ -29,19 +29,19 @@
                   question %>
             <% if logged_in? && question.user == current_user %>
               <span> | </span>
-              <%= link_to " <span class='glyphicon glyphicon-pencil'></span> Editar"
+              <%= link_to " <span class='glyphicon glyphicon-pencil'></span> Bearbeiten"
                     .html_safe,
                     edit_question_path(question) %>
               <span> | </span>
-              <%= link_to " <span class='glyphicon glyphicon-trash'></span> Eliminar"
+              <%= link_to " <span class='glyphicon glyphicon-trash'></span> Löschen"
                     .html_safe, question,
                     method: :delete,
-                    data: { confirm: "¿Estás seguro de eliminar esta pregunta?" } %>
+                    data: { confirm: "Möchtest du diese Frage wirklich löschen?" } %>
             <% end %>
           </div>
           <div class="questions__started">
-            formulada hace <%= time_ago_in_words question.created_at %>
-            por <%= mail_to question.user.email %></a>
+            gestellt vor <%= time_ago_in_words question.created_at %>
+            von <%= mail_to question.user.email %></a>
           </div>
         </div>
       </div>

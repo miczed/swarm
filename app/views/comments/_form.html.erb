@@ -5,14 +5,14 @@
         <td>
           <div id="comment-text">
             <% if commentable.is_a? Question %>
-              <%= form.text_area :body, class: "form-control", cols: "68", rows: "2", placeholder: "Use los comentarios para solicitar mas información o sugerir mejoras. Evite responder las preguntas en los comentarios." %>
+              <%= form.text_area :body, class: "form-control", cols: "68", rows: "2", placeholder: "Verwende die Kommentare, um weitere Informationen anzufordern oder Verbesserungen vorzuschlagen. Vermeide es, Fragen in den Kommentaren zu beantworten." %>
             <% elsif commentable.is_a? Answer %>
-              <%= form.text_area :body, class: "form-control", cols: "68", rows: "2", placeholder: 'Use los comentarios para solicitar mas información o sugerir mejoras. Evite comentarios como "+1" o "gracias".' %>
+              <%= form.text_area :body, class: "form-control", cols: "68", rows: "2", placeholder: 'Verwende die Kommentare, um weitere Informationen anzufordern oder Verbesserungen vorzuschlagen. Vermeide Kommentare wie "+1" oder "Danke".' %>
             <% end %>
           </div>
         </td>
         <td class="vt">
-          <%= form.submit "Comentar", class: "btn btn-info" %>
+          <%= form.submit "Kommentieren", class: "btn btn-info" %>
         </td>
       </tr>
       <tr>
