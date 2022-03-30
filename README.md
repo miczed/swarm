@@ -2,5 +2,5 @@
 
 ### Run the server
 ```
-rails server
+./bin/dev
 ```

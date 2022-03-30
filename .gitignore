@@ -24,3 +24,6 @@
 
 .byebug_history
 .idea
+
+/app/assets/builds/*
+!/app/assets/builds/.keep

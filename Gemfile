@@ -13,8 +13,10 @@ gem 'rails', '~> 7.0'
 gem 'puma', '~> 3.7'
 gem 'bootsnap'
 
-# Use SCSS for stylesheets
-gem 'sassc-rails', '>= 2.1.0'
+# Asset Compilation Pipeline
+gem 'sprockets', '~> 4.0'
+gem 'sprockets-rails', :require => 'sprockets/railtie'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -63,3 +65,6 @@ end
 group :production do
   #gem 'pg', '0.18.4'
 end
+
+# Added at 2022-03-30 16:12:36 +0200 by michaelzioerjen:
+gem "tailwindcss-rails", "~> 2.0"
