@@ -19,7 +19,7 @@
             <%= link_to "Fragen", questions_path %>
           </li>
         </ul>
-        <%= form_tag({controller: "questions", action: "search"},
+        <%= form_tag(search_path,
                      method: "get",
                      class:  "navbar-form navbar-left",
                      enforce_utf8: false) do %>
@@ -29,25 +29,26 @@
           </div>
         <% end %>
         <ul class="nav navbar-nav navbar-right">
-          <% if logged_in? %>
+          <% if user_signed_in? %>
             <li class="nav-item <%= 'current' if current_page?(new_question_path) %>">
               <%= link_to "Neue Frage", new_question_path %>
             </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle avatar" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                <img src="<%= Gravatar.new("#{current_user.email}").image_url %>" class="img-rounded" />
+                <img src="<%= Gravatar.new("#{current_user.email}").image_url %>" class="img-rounded mr-2" /><%= current_user.username %>
                 <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
-                <li><%= link_to "Ausloggen", logout_path, method: :delete %></li>
+                <li><%= link_to "Profil bearbeiten", edit_user_registration_path  %></li>
+                <li><%= link_to "Ausloggen", destroy_user_session_path, method: :delete %></li>
               </ul>
             </li>
           <% else %>
-            <li class="nav-item <%= 'current' if current_page?(login_path) %>">
-              <%= link_to "Login", login_path %>
+            <li class="nav-item <%= 'current' if current_page?(new_user_session_path) %>">
+              <%= link_to "Login", new_user_session_path %>
             </li>
-            <li class="nav-item <%= 'current' if current_page?(signup_path) %>">
-              <%= link_to "Registrieren", signup_path %>
+            <li class="nav-item <%= 'current' if current_page?(new_user_registration_path) %>">
+              <%= link_to "Registrieren", new_user_registration_path %>
             </li>
           <% end %>
         </ul>

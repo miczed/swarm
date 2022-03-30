@@ -27,7 +27,7 @@
             <%= link_to "<span class='glyphicon glyphicon-eye-open'></span> Ansehen"
                   .html_safe,
                   question %>
-            <% if logged_in? && question.user == current_user %>
+            <% if user_signed_in? && question.user == current_user %>
               <span> | </span>
               <%= link_to " <span class='glyphicon glyphicon-pencil'></span> Bearbeiten"
                     .html_safe,

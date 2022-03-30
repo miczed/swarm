@@ -28,6 +28,11 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+# Authentication
+gem 'devise'
+# Translation for Auth
+gem 'devise-i18n'
+
 gem 'bootstrap-sass', '~> 3.4.1'
 gem 'jquery-rails', '~> 4.1', '>= 4.1.1'
 gem 'xmlrpc', '~> 0.3.0'

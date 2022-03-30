@@ -27,7 +27,7 @@
                   <tbody>
                     <tr>
                       <td class="vt">
-                        <% if logged_in? && @question.user == current_user %>
+                        <% if user_signed_in? && @question.user == current_user %>
                           <div class="question__actions">
                             <ul>
                               <li>
@@ -71,7 +71,7 @@
                     <tr>
                       <td></td>
                       <td>
-                        <% if logged_in? %>
+                        <% if user_signed_in? %>
                           <div class="comment-link-form">
                             <a id="comments-link" href="#">Kommentieren</a>
                           </div>

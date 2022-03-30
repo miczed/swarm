@@ -14,6 +14,16 @@ Rails.application.configure do
   # Show full error reports.
   config.consider_all_requests_local = true
 
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  config.action_mailer.smtp_settings = {
+    :address => 'smtp.mailtrap.io',
+    :port => 2525,
+    :user_name => 'b635b0482da3c8',
+    :password => 'ff39e42fd2d928'
+
+  }
+
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
   if Rails.root.join('tmp', 'caching-dev.txt').exist?

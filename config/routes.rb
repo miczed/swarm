@@ -1,12 +1,21 @@
 Rails.application.routes.draw do
 
-  root   'questions#index'
+  devise_for :users, path: '', path_names: {
+    sign_in: 'login',
+    sign_out: 'logout',
+    sign_up: 'register',
+    password: 'password-reset', confirmation: 'verification',
+    edit: 'users/profile'
+  }
 
-  get    'signup', to: 'users#new'
-  post   'signup', to: 'users#create'
-  get    'login',  to: 'sessions#new'
-  post   'login',  to: 'sessions#create'
-  delete 'logout', to: 'sessions#destroy'
+
+  root to: 'questions#index'
+
+  #get    'signup', to: 'users#new'
+  #post   'signup', to: 'users#create'
+  #get    'login',  to: 'sessions#new'
+  #post   'login',  to: 'sessions#create'
+  #delete 'logout', to: 'sessions#destroy'
 
   get    'search', to: 'questions#search'
 
