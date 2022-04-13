@@ -47,10 +47,10 @@
                       </td>
                       <td class="user-signature">
                         <div class="user-action-time">
-                          gestellt von <%= time_ago_in_words @question.created_at %>
+                          gestellt vor <%= time_ago_in_words @question.created_at %>
                         </div>
                         <div class= "user-details">
-                          <%= mail_to @question.user.email %>
+                          <strong><%= @question.user.username %></strong>
                         </div>
                       </td>
                     </tr>
