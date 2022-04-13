@@ -12,7 +12,7 @@
         <td class="answer__cell">
           <div class="answer__body">
             <p>
-              <%= markdown answer.body %>
+              <%= answer.body %>
             </p>
             <table class="answer__footer">
               <tbody>
@@ -31,7 +31,7 @@
                                   .html_safe,
                                   question_answer_path(answer.question, answer),
                                   method: :delete,
-                                  data: { confirm: "Möchtest du diese Frage wirklich löschen?" } %>
+                                  data: { confirm: "Möchtest du diese Antwort wirklich löschen?" } %>
                           </li>
                         </ul>
                       </div>
@@ -39,10 +39,10 @@
                   </td>
                   <td class="user-signature">
                     <div class="user-action-time">
-                      contestada hace <%= time_ago_in_words answer.created_at %>
+                      beantwortet vor <%= time_ago_in_words answer.created_at %>
                     </div>
                     <div class= "user-details">
-                      <%= mail_to answer.user.email %>
+                      <strong><%= answer.user.username %></strong>
                     </div>
                   </td>
                 </tr>
@@ -65,7 +65,7 @@
                   <td>
                     <% if user_signed_in? %>
                       <div class="comment-link-form">
-                        <a id="comments-link" href="#">añade un comentario</a>
+                        <a id="comments-link" href="#">einen Kommentar hinzufügen</a>
                       </div>
                       <div class="comment-form">
                         <%= render 'comments/form', commentable: answer, url_path: question_answer_comments_path(answer.question, answer) %>
