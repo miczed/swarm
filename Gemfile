@@ -68,3 +68,6 @@ end
 
 # Added at 2022-03-30 16:12:36 +0200 by michaelzioerjen:
 gem "tailwindcss-rails", "~> 2.0"
+
+# Added at 2022-03-30 21:36:46 +0200 by michaelzioerjen:
+gem "importmap-rails", "~> 1.0"

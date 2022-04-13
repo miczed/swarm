@@ -6,7 +6,8 @@ class Question < ApplicationRecord
 
   validates :title, presence: true
 
-  validates :body, presence: true
+  validates :body, presence: true, no_attachments: true
+  has_rich_text :body
 
   scope :order_by_newest, -> { order("id desc") }
 

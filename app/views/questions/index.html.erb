@@ -21,7 +21,7 @@
             <%= link_to question.title, question, class: "questions__hyperlink" %>
           </h3>
           <p>
-            <%= truncate(strip_tags(markdown(question.body)), length: 250, escape: false) %>
+            <%= question.body.to_plain_text.truncate(250) %>
           </p>
           <div class="questions__actions">
             <%= link_to "<span class='glyphicon glyphicon-eye-open'></span> Ansehen"

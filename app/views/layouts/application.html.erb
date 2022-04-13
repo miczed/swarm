@@ -3,9 +3,15 @@
   <head>
     <title>swarm</title>
     <%= csrf_meta_tags %>
+    <link rel="stylesheet" href="https://cdn.skypack.dev/trix/dist/trix.css">
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script type="module">
+        import railsActiontext from 'https://cdn.skypack.dev/@rails/actiontext';
+        import trix from 'https://cdn.skypack.dev/trix';
+    </script>
+
   </head>
 
   <body>

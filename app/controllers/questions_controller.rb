@@ -3,7 +3,7 @@ class QuestionsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update]
 
   def index
-    @questions = Question.includes(:votes, :answers).order_by_newest.limit(10)
+    @questions = Question.with_rich_text_body.includes(:votes, :answers).order_by_newest.limit(10)
   end
 
   def show
