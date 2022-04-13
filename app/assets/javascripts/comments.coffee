@@ -4,4 +4,4 @@ $(document).on "turbolinks:load", ->
     parentComment = $(this).closest(".comments")
     parentComment.find(".comment-link-form").hide()
     parentComment.find(".comment-form").fadeIn( "slow" )
-    parentComment.find(".comment-form textarea").focus()
+    parentComment.find(".comment-form trix-editor").focus()

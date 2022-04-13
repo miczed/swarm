@@ -13,7 +13,7 @@ class Answers::CommentsController < CommentsController
     @comment = @commentable.comments.find_by(commentable_id: params[:answer_id],
                                              id: params[:id])
     if @comment.destroy
-      flash[:success] = 'El comentario ha sido eliminado con éxito.'
+      flash[:success] = 'Der Kommentar wurde erfolgreich gelöscht.'
     end
     redirect_to url_for(@commentable.question)
   end

@@ -5,9 +5,10 @@
         <td>
           <div id="comment-text">
             <% if commentable.is_a? Question %>
-              <%= form.text_area :body, class: "form-control", cols: "68", rows: "2", placeholder: "Verwende die Kommentare, um weitere Informationen anzufordern oder Verbesserungen vorzuschlagen. Vermeide es, Fragen in den Kommentaren zu beantworten." %>
+
+              <%= form.rich_text_area :body, cols: "68", rows: "2", placeholder: "Verwende die Kommentare, um weitere Informationen anzufordern oder Verbesserungen vorzuschlagen. Vermeide es, Fragen in den Kommentaren zu beantworten." %>
             <% elsif commentable.is_a? Answer %>
-              <%= form.text_area :body, class: "form-control", cols: "68", rows: "2", placeholder: 'Verwende die Kommentare, um weitere Informationen anzufordern oder Verbesserungen vorzuschlagen. Vermeide Kommentare wie "+1" oder "Danke".' %>
+              <%= form.rich_text_area :body,  cols: "68", rows: "2", placeholder: 'Verwende die Kommentare, um weitere Informationen anzufordern oder Verbesserungen vorzuschlagen. Vermeide Kommentare wie "+1" oder "Danke".' %>
             <% end %>
           </div>
         </td>
